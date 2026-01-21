@@ -1,0 +1,55 @@
+# Node {{NODE_INDEX}}: {{NODE_NAME}}
+
+> **COR Node**: {{NODE_DESCRIPTION}}
+
+## Purpose
+
+{{NODE_PURPOSE}}
+
+## Entry Conditions
+
+- Previous node completed (if not first node)
+- Required inputs available
+
+## Actions
+
+1. [Action 1]
+2. [Action 2]
+3. [Action 3]
+
+## Output
+
+Create `workspace/{{NODE_OUTPUT_FILE}}`
+
+```json
+{
+  "node": "{{NODE_INDEX}}-{{NODE_NAME}}",
+  "status": "completed",
+  "output": {},
+  "completed_at": "ISO8601"
+}
+```
+
+## Exit Validation
+
+Run: `bash exit-validation.sh`
+
+### Success Criteria
+- [ ] Output file exists
+- [ ] Required fields populated
+- [ ] [Node-specific criteria]
+
+### Blocking Conditions
+- Missing required output
+- Validation failed
+
+## Next Node
+
+On success → `{{NEXT_NODE}}`
+
+## Error Handling
+
+| Error | Action |
+|-------|--------|
+| [Error 1] | [Recovery action] |
+| [Error 2] | [Recovery action] |

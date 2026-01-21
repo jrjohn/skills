@@ -1,0 +1,84 @@
+# Node {{NODE_INDEX}}: {{NODE_NAME}}
+
+> **COR Node**: {{NODE_DESCRIPTION}}
+
+## Purpose
+
+{{NODE_PURPOSE}}
+
+## Entry Conditions
+
+{{#if IS_FIRST_NODE}}
+- Skill invoked
+- No blocking errors
+{{else}}
+- Node {{PREV_NODE}} completed
+- `workspace/{{PREV_OUTPUT}}` exists
+{{/if}}
+
+## Required Inputs
+
+| Input | Source | Required |
+|-------|--------|----------|
+{{#each INPUTS}}
+| {{this.name}} | {{this.source}} | {{this.required}} |
+{{/each}}
+
+## Actions
+
+{{#each ACTIONS}}
+{{@index}}. **{{this.name}}**
+   {{this.description}}
+{{/each}}
+
+## Output
+
+Create `workspace/{{OUTPUT_FILE}}`
+
+### Schema
+```json
+{
+  "node": "{{NODE_INDEX}}-{{NODE_NAME}}",
+  "status": "completed",
+  "output": {
+    {{#each OUTPUT_FIELDS}}
+    "{{this.name}}": "{{this.type}}"{{#unless @last}},{{/unless}}
+    {{/each}}
+  },
+  "completed_at": "ISO8601"
+}
+```
+
+## Exit Validation
+
+Run: `bash exit-validation.sh`
+
+### Success Criteria
+{{#each SUCCESS_CRITERIA}}
+- [ ] {{this}}
+{{/each}}
+
+### Blocking Conditions
+{{#each BLOCKING_CONDITIONS}}
+- {{this}}
+{{/each}}
+
+## Next Node
+
+{{#if IS_LAST_NODE}}
+This is the final node. Workflow completes here.
+{{else}}
+On success → `{{NEXT_NODE}}`
+{{/if}}
+
+## Error Handling
+
+| Error | Action |
+|-------|--------|
+{{#each ERRORS}}
+| {{this.error}} | {{this.action}} |
+{{/each}}
+
+## Notes
+
+{{NOTES}}

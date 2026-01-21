@@ -1,0 +1,49 @@
+# {{SKILL_DISPLAY_NAME}}
+
+{{SKILL_DESCRIPTION}}
+
+## Installation
+
+This skill is located at:
+```
+~/.claude/skills/{{SKILL_NAME}}/
+```
+
+## Usage
+
+Simply invoke the skill:
+
+```
+/{{SKILL_NAME}}
+```
+
+## Features
+
+- [Feature 1]
+- [Feature 2]
+
+## Examples
+
+### Basic Usage
+
+```
+User: /{{SKILL_NAME}}
+AI: [Response]
+```
+
+## Configuration
+
+No configuration required. This is a simple, stateless skill.
+
+## Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Skill not found | Verify SKILL.md exists |
+| [Other issue] | [Solution] |
+
+## Version
+
+- **Version**: {{VERSION}}
+- **Created**: {{GENERATED_DATE}}
+- **Type**: Simple

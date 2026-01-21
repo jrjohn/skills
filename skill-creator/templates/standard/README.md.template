@@ -1,0 +1,89 @@
+# {{SKILL_DISPLAY_NAME}}
+
+{{SKILL_DESCRIPTION}}
+
+## Installation
+
+This skill is located at:
+```
+~/.claude/skills/{{SKILL_NAME}}/
+```
+
+## Usage
+
+### Basic Invocation
+
+```
+/{{SKILL_NAME}}
+```
+
+### With Arguments
+
+```
+/{{SKILL_NAME}} [options]
+```
+
+## Features
+
+- Pattern-based workflow
+- Reusable templates
+- Validation checklists
+- [Additional features]
+
+## Directory Structure
+
+```
+{{SKILL_NAME}}/
+├── SKILL.md          # Main skill definition
+├── README.md         # This file
+├── examples.md       # Usage examples
+├── patterns/         # Reusable patterns
+├── checklists/       # Validation checklists
+└── references/       # Reference docs
+```
+
+## Patterns
+
+| Pattern | Description | Usage |
+|---------|-------------|-------|
+| [Pattern 1] | [Description] | [When to use] |
+| [Pattern 2] | [Description] | [When to use] |
+
+## Examples
+
+See `examples.md` for detailed usage examples.
+
+### Quick Example
+
+```
+User: /{{SKILL_NAME}}
+AI: [Expected response]
+```
+
+## Configuration
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| [option1] | [default] | [Description] |
+
+## Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Skill not found | Verify SKILL.md exists |
+| Pattern missing | Check patterns/ directory |
+| [Other issue] | [Solution] |
+
+## Contributing
+
+To extend this skill:
+
+1. Add patterns to `patterns/`
+2. Update checklists in `checklists/`
+3. Add references to `references/`
+
+## Version
+
+- **Version**: {{VERSION}}
+- **Created**: {{GENERATED_DATE}}
+- **Type**: Standard

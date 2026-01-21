@@ -1,0 +1,125 @@
+# {{SKILL_DISPLAY_NAME}}
+
+{{SKILL_DESCRIPTION}}
+
+## Overview
+
+This is a **Complex** skill following the COR-AFP-NTP protocol:
+
+- **COR** (Chain of Repository): Sequential node-based workflow
+- **AFP** (Anti-Fragile Protocol): State recovery and persistence
+- **NTP** (Node Transition Protocol): Gated transitions between nodes
+
+## Installation
+
+This skill is located at:
+```
+~/.claude/skills/{{SKILL_NAME}}/
+```
+
+## Usage
+
+### Start New Session
+
+```
+/{{SKILL_NAME}}
+```
+
+### Resume Existing Session
+
+Simply invoke the skill again - it will automatically detect and resume any in-progress session.
+
+```
+/{{SKILL_NAME}}
+```
+
+## Workflow Phases
+
+{{PHASES_DESCRIPTION}}
+
+## Directory Structure
+
+```
+{{SKILL_NAME}}/
+├── SKILL.md                    # COR entry point
+├── README.md                   # This file
+├── process/                    # COR nodes
+│   ├── 00-init/
+│   │   ├── README.md
+│   │   └── exit-validation.sh
+│   └── ...
+├── workspace-template/         # AFP state template
+│   └── current-process.json
+├── frameworks/                 # COR-AFP-NTP
+│   ├── cor/
+│   ├── afp/
+│   └── ntp/
+├── templates/                  # Output templates
+├── validators/                 # Validation scripts
+└── references/                 # Reference docs
+```
+
+## State Management
+
+### Check Current State
+
+```bash
+cat ~/.claude/skills/{{SKILL_NAME}}/workspace/current-process.json
+```
+
+### Health Check
+
+```bash
+bash ~/.claude/skills/{{SKILL_NAME}}/frameworks/afp/quick-health-check.sh
+```
+
+### Reset Session
+
+```bash
+rm -rf ~/.claude/skills/{{SKILL_NAME}}/workspace/
+```
+
+## Examples
+
+### Complete Workflow
+
+```
+User: /{{SKILL_NAME}}
+AI: Starting {{SKILL_DISPLAY_NAME}}...
+    [Phase 1: Init]
+    [Phase 2: Process]
+    [Phase 3: Complete]
+AI: Workflow complete!
+```
+
+### Resuming Interrupted Session
+
+```
+User: /{{SKILL_NAME}}
+AI: Found existing session at Phase 2.
+    Resuming from Phase 2...
+```
+
+## Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Skill not starting | Check SKILL.md exists |
+| Resume not working | Verify workspace/current-process.json |
+| Validation failing | Run exit-validation.sh manually |
+| State corrupted | Reset session and start over |
+
+## Contributing
+
+To extend this skill:
+
+1. Add nodes to `process/`
+2. Update node chain in SKILL.md
+3. Add validators to `validators/`
+4. Update references in `references/`
+
+## Version
+
+- **Version**: {{VERSION}}
+- **Created**: {{GENERATED_DATE}}
+- **Type**: Complex (COR-AFP-NTP)

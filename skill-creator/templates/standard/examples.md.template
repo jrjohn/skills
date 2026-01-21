@@ -1,0 +1,114 @@
+# {{SKILL_DISPLAY_NAME}} - Examples
+
+## Basic Examples
+
+### Example 1: Simple Invocation
+
+**Input:**
+```
+/{{SKILL_NAME}}
+```
+
+**Output:**
+```
+[Expected output]
+```
+
+### Example 2: With Arguments
+
+**Input:**
+```
+/{{SKILL_NAME}} argument1 argument2
+```
+
+**Output:**
+```
+[Expected output]
+```
+
+## Pattern Examples
+
+### Using Pattern 1
+
+**Scenario:** [Describe scenario]
+
+**Input:**
+```
+/{{SKILL_NAME}}
+```
+
+**Process:**
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
+
+**Output:**
+```
+[Expected output]
+```
+
+### Using Pattern 2
+
+**Scenario:** [Describe scenario]
+
+**Input:**
+```
+/{{SKILL_NAME}}
+```
+
+**Output:**
+```
+[Expected output]
+```
+
+## Advanced Examples
+
+### Combining Multiple Patterns
+
+**Scenario:** [Complex scenario]
+
+**Steps:**
+1. Invoke skill
+2. Select patterns
+3. Review output
+
+**Example Interaction:**
+```
+User: /{{SKILL_NAME}}
+AI: Which pattern would you like to use?
+User: Pattern 1
+AI: [Applies pattern and returns result]
+```
+
+## Error Handling Examples
+
+### Missing Input
+
+**Input:**
+```
+/{{SKILL_NAME}}
+```
+(without required input)
+
+**Response:**
+```
+Error: Required input missing. Please provide [requirement].
+```
+
+### Invalid Format
+
+**Input:**
+```
+/{{SKILL_NAME}} invalid-format
+```
+
+**Response:**
+```
+Error: Invalid format. Expected [format].
+```
+
+## Tips
+
+1. [Tip 1]
+2. [Tip 2]
+3. [Tip 3]

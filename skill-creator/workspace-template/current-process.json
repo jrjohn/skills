@@ -1,0 +1,15 @@
+{
+  "session_id": "{{SESSION_ID}}",
+  "current_node": "00-requirements",
+  "skill_name": "",
+  "skill_type": "",
+  "target_directory": "",
+  "started_at": "{{STARTED_AT}}",
+  "updated_at": "{{UPDATED_AT}}",
+  "completed_nodes": [],
+  "node_outputs": {},
+  "metadata": {
+    "creator_version": "1.0.0",
+    "protocol": "COR-AFP-NTP"
+  }
+}

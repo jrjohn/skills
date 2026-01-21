@@ -1,0 +1,48 @@
+---
+name: {{SKILL_NAME}}
+description: {{SKILL_DESCRIPTION}}
+version: {{VERSION}}
+allowed-tools:
+{{ALLOWED_TOOLS_YAML}}
+---
+
+# {{SKILL_DISPLAY_NAME}}
+
+> {{SKILL_DESCRIPTION}}
+
+## Purpose
+
+[Describe the primary purpose of this skill]
+
+## Usage
+
+```
+User: /{{SKILL_NAME}}
+```
+
+## Quick Reference
+
+| Command | Description |
+|---------|-------------|
+| `/{{SKILL_NAME}}` | Invoke the skill |
+
+## Actions
+
+1. [First action]
+2. [Second action]
+3. [Complete]
+
+## Examples
+
+### Example 1
+
+```
+User: /{{SKILL_NAME}}
+AI: [Expected response]
+```
+
+## Notes
+
+- Created: {{GENERATED_DATE}}
+- Type: Simple
+- Protocol: None (stateless)

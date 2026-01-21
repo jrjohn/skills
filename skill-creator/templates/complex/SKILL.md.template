@@ -1,0 +1,163 @@
+---
+name: {{SKILL_NAME}}
+description: {{SKILL_DESCRIPTION}}
+version: {{VERSION}}
+allowed-tools:
+{{ALLOWED_TOOLS_YAML}}
+---
+
+# {{SKILL_DISPLAY_NAME}}
+
+> **COR-AFP-NTP Compliant Skill**
+
+{{SKILL_DESCRIPTION}}
+
+---
+
+## Purpose
+
+[Describe the primary purpose of this skill]
+
+---
+
+## Quick Start
+
+```
+User: /{{SKILL_NAME}}
+AI: Starting {{SKILL_DISPLAY_NAME}} workflow...
+```
+
+---
+
+## COR Process Flow
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                                                                             │
+│  {{NODE_FLOW_DIAGRAM}}                                                      │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Node Summary
+
+| Node | Purpose | Gate |
+|------|---------|------|
+{{NODE_TABLE}}
+
+---
+
+## AFP State Management
+
+### Workspace Location
+```
+~/.claude/skills/{{SKILL_NAME}}/workspace/current-process.json
+```
+
+### State Schema
+```json
+{
+  "session_id": "uuid",
+  "current_node": "00-init",
+  "started_at": "ISO8601",
+  "updated_at": "ISO8601",
+  "completed_nodes": [],
+  "node_outputs": {}
+}
+```
+
+### Recovery Commands
+```bash
+# Check current state
+cat ~/.claude/skills/{{SKILL_NAME}}/workspace/current-process.json
+
+# Quick health check
+bash ~/.claude/skills/{{SKILL_NAME}}/frameworks/afp/quick-health-check.sh
+```
+
+---
+
+## NTP Gate Validation
+
+Each node must pass exit validation before proceeding:
+
+```bash
+# Example: Validate first node
+bash ~/.claude/skills/{{SKILL_NAME}}/process/00-init/exit-validation.sh
+```
+
+---
+
+## Initialization Protocol
+
+### On Skill Invocation:
+
+1. **Check for existing session**
+   ```bash
+   if [ -f ~/.claude/skills/{{SKILL_NAME}}/workspace/current-process.json ]; then
+     # Resume existing session
+   else
+     # Start new session
+   fi
+   ```
+
+2. **If resuming**: Read state and continue from `current_node`
+
+3. **If new**:
+   - Initialize workspace
+   - Start at first node
+
+---
+
+## Entry Point
+
+**READ FIRST**: `~/.claude/skills/{{SKILL_NAME}}/process/00-init/README.md`
+
+Then follow the COR chain sequentially.
+
+---
+
+## File Index
+
+### Core Files
+| File | Purpose |
+|------|---------|
+| `SKILL.md` | This file - COR entry point |
+| `README.md` | User documentation |
+
+### Process Nodes
+| Node | README | Validation |
+|------|--------|------------|
+{{PROCESS_FILES_TABLE}}
+
+### Frameworks
+| Framework | Location |
+|-----------|----------|
+| COR | `frameworks/cor/` |
+| AFP | `frameworks/afp/` |
+| NTP | `frameworks/ntp/` |
+
+---
+
+## Error Recovery
+
+### Common Issues
+
+| Issue | Solution |
+|-------|----------|
+| Session corrupted | Delete workspace/ and restart |
+| Node validation fails | Check exit-validation.sh output |
+| State inconsistent | Run health check |
+
+### Reset Session
+```bash
+rm -rf ~/.claude/skills/{{SKILL_NAME}}/workspace/
+```
+
+---
+
+## Version History
+
+| Version | Date | Changes |
+|---------|------|---------|
+| {{VERSION}} | {{GENERATED_DATE}} | Initial creation |

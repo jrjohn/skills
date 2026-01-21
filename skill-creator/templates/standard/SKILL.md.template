@@ -1,0 +1,87 @@
+---
+name: {{SKILL_NAME}}
+description: {{SKILL_DESCRIPTION}}
+version: {{VERSION}}
+allowed-tools:
+{{ALLOWED_TOOLS_YAML}}
+---
+
+# {{SKILL_DISPLAY_NAME}}
+
+> {{SKILL_DESCRIPTION}}
+
+## Purpose
+
+[Describe the primary purpose of this skill]
+
+## Usage
+
+```
+User: /{{SKILL_NAME}}
+```
+
+## Quick Reference
+
+| Command | Description |
+|---------|-------------|
+| `/{{SKILL_NAME}}` | Invoke the skill |
+| `/{{SKILL_NAME}} [args]` | Invoke with arguments |
+
+## Patterns
+
+This skill includes the following patterns:
+
+| Pattern | Purpose | File |
+|---------|---------|------|
+| [Pattern 1] | [Description] | `patterns/pattern-1.md` |
+| [Pattern 2] | [Description] | `patterns/pattern-2.md` |
+
+## Checklists
+
+| Checklist | Purpose |
+|-----------|---------|
+| [Checklist 1] | [Description] |
+
+## Workflow
+
+1. **Initialize** - Gather inputs
+2. **Process** - Apply patterns
+3. **Validate** - Check output
+4. **Complete** - Return result
+
+## File Index
+
+| File | Purpose |
+|------|---------|
+| `SKILL.md` | This file - main skill definition |
+| `README.md` | User documentation |
+| `examples.md` | Usage examples |
+| `patterns/` | Pattern definitions |
+| `checklists/` | Validation checklists |
+| `references/` | Reference documentation |
+
+## Examples
+
+### Example 1: Basic Usage
+
+```
+User: /{{SKILL_NAME}}
+AI: [Expected response]
+```
+
+### Example 2: With Arguments
+
+```
+User: /{{SKILL_NAME}} argument
+AI: [Expected response]
+```
+
+## References
+
+See `references/` directory for additional documentation.
+
+## Notes
+
+- Created: {{GENERATED_DATE}}
+- Type: Standard
+- Protocol: Pattern-based
